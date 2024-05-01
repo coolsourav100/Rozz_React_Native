@@ -1,0 +1,51 @@
+import { Box, Divider } from '@gluestack-ui/themed';
+import React, { useState } from 'react';
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
+
+const SingIpWithMobile = ({ navigation }) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSignIn = () => {
+        console.log('Sign-In details:', email, password);
+        navigation.navigate('OtpforSignIn');
+    };
+
+    return (
+        <Box style={{ flex: 1, backgroundColor: "#ffffff", paddingHorizontal: 30, }}>
+            <View style={{ padding: 10, paddingBottom: 30 }}>
+                <TouchableOpacity onPress={() => navigation.goBack()}>
+                    <Icon name="arrow-back-ios" size={40} />
+                </TouchableOpacity>
+            </View>
+            <View style={{ display: "flex", justifyContent: "flex-start", paddingBottom: 20 }}>
+                <Text style={{ color: "#000", fontSize: 40, fontWeight: 600 }}> Welcome Again !</Text>
+                <Text style={{ color: "#000", fontSize: 24, fontWeight: 400 }}>   With your phone number</Text>
+            </View>
+
+            <Box style={{ paddingTop: 40 }} >
+                <View style={{ width: '100%', padding: 10, alignItems: 'center' }}>
+                    <TextInput keyboardType="numeric" maxLength={10} placeholder='Phone Number' style={{ backgroundColor: "#f2f2f2", height: 60, width: "100%", borderRadius: 8, padding: 20 }} />
+                </View>
+                <View style={{ width: '100%', padding: 15, display: "flex", flexDirection: "row", justifyContent: "flex-end" }}>
+
+                    <View>
+                        <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')}><Text style={{ color: "#8f8f8f" }}>Sign In with email</Text></TouchableOpacity>
+                    </View>
+                </View>
+                <View style={{ width: '100%', padding: 10, alignItems: 'center' }}>
+                    <TouchableOpacity onPress={handleSignIn} style={{
+                        backgroundColor: "#3b8f43",
+                        borderRadius: 8,
+                        width: "100%",
+                        height: 60,
+                    }}><Text style={{ color: "#ffffff", textAlign: 'center', padding: 16, fontSize: 20, fontWeight: 600 }}>Sign In</Text></TouchableOpacity>
+                </View>
+
+            </Box>
+        </Box >
+    );
+};
+export default SingIpWithMobile;

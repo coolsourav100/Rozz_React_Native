@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "AwesomeProject",
-    "slug": "AwesomeProject",
+    "name": "Rozz",
+    "slug": "Rozz",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/rozz.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#10121b"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -18,13 +18,24 @@
       "supportsTablet": true
     },
     "android": {
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.FOREGROUND_SERVICE"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.unlearn.Rozz"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "dcce1005-7630-43e6-a953-dc981295362c"
+      }
     }
   }
 }
